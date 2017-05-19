@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170516 16:49:42.863" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/Saucelabs/tests/sauce.robot" id="s1" name="Sauce">
+<test id="s1-t1" name="Load Home Page">
+<kw type="setup" name="Begin Web Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+</arguments>
+<msg timestamp="20170516 16:49:42.947" level="INFO">Opening browser 'chrome' to base url 'https://z.co.nz' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170516 16:49:51.628" starttime="20170516 16:49:42.947"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Name</arg>
+<arg>${SUITE_NAME}: ${TEST_NAME}</arg>
+<arg>${REMOTE_URL}</arg>
+</arguments>
+<kw name="Update Saucelabs Test Name">
+<arguments>
+<arg>${SUITE_NAME}: ${TEST_NAME}</arg>
+<arg>${REMOTE_URL}</arg>
+</arguments>
+<msg timestamp="20170516 16:49:51.635" level="FAIL">No keyword with name 'Update Saucelabs Test Name' found.</msg>
+<status status="FAIL" endtime="20170516 16:49:51.635" starttime="20170516 16:49:51.635"></status>
+</kw>
+<status status="FAIL" endtime="20170516 16:49:51.635" starttime="20170516 16:49:51.628"></status>
+</kw>
+<status status="FAIL" endtime="20170516 16:49:51.635" starttime="20170516 16:49:42.946"></status>
+</kw>
+<kw type="teardown" name="End Web Test">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${REMOTE_URL}' != ''</arg>
+<arg>Update Saucelabs Test Result</arg>
+<arg>${SUITE_NAME}: ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+</arguments>
+<kw name="Update Saucelabs Test Result">
+<arguments>
+<arg>${SUITE_NAME}: ${TEST_NAME}</arg>
+<arg>${TEST_STATUS}</arg>
+<arg>${TEST_TAGS}</arg>
+<arg>${REMOTE_URL}</arg>
+</arguments>
+<msg timestamp="20170516 16:49:51.640" level="FAIL">No keyword with name 'Update Saucelabs Test Result' found.</msg>
+<status status="FAIL" endtime="20170516 16:49:51.640" starttime="20170516 16:49:51.640"></status>
+</kw>
+<status status="FAIL" endtime="20170516 16:49:51.640" starttime="20170516 16:49:51.636"></status>
+</kw>
+<status status="FAIL" endtime="20170516 16:49:51.640" starttime="20170516 16:49:51.635">No keyword with name 'Update Saucelabs Test Result' found.</status>
+</kw>
+<doc>Test that as a user I can connect to SauceLabs</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="FAIL" endtime="20170516 16:49:51.640" critical="yes" starttime="20170516 16:49:42.946">Setup failed:
+No keyword with name 'Update Saucelabs Test Name' found.
+
+Also teardown failed:
+No keyword with name 'Update Saucelabs Test Result' found.</status>
+</test>
+<doc>This is a demo for connecting to SauceLabs</doc>
+<status status="FAIL" endtime="20170516 16:49:51.641" starttime="20170516 16:49:42.866"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+<stat fail="1" pass="0">Regression</stat>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Sauce" pass="0">Sauce</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170519 15:06:26.482" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/saucelabs-applitools/tests/appli-sauce2.robot" id="s1" name="Appli-Sauce2">
+<test id="s1-t1" name="Demo Test On SauceLabs">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>chrome</arg>
+<arg>None</arg>
+<arg>remote_url=${SAUCE_REMOTEURL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+</arguments>
+<msg timestamp="20170519 15:06:27.256" level="INFO">Opening browser 'chrome' to base url 'https://z.co.nz' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170519 15:06:44.958" starttime="20170519 15:06:27.256"></status>
+</kw>
+<kw name="Open Eyes Session" library="RobotAppEyes">
+<doc>Starts a session with the Applitools Eyes Website.</doc>
+<arguments>
+<arg>${START_URL}</arg>
+<arg>${Applitools-AppName}</arg>
+<arg>${Applitools-TestName}</arg>
+<arg>${Applitools-Key}</arg>
+<arg>width=${Width}</arg>
+<arg>height=${Height}</arg>
+<arg>includeEyesLog=False</arg>
+<arg>matchlevel=${MatchLevel}</arg>
+</arguments>
+<status status="PASS" endtime="20170519 15:06:47.830" starttime="20170519 15:06:44.958"></status>
+</kw>
+<kw name="Check Eyes Window" library="RobotAppEyes">
+<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
+<arguments>
+<arg>Main Page New</arg>
+<arg>force_full_page_screenshot=True</arg>
+</arguments>
+<status status="PASS" endtime="20170519 15:07:13.904" starttime="20170519 15:06:47.830"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${button}</arg>
+</arguments>
+<msg timestamp="20170519 15:07:13.905" level="INFO">Clicking element 'css=button'.</msg>
+<status status="PASS" endtime="20170519 15:07:14.948" starttime="20170519 15:07:13.905"></status>
+</kw>
+<kw name="Check Eyes Window" library="RobotAppEyes">
+<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
+<arguments>
+<arg>Features Page New</arg>
+<arg>force_full_page_screenshot=True</arg>
+</arguments>
+<status status="PASS" endtime="20170519 15:07:33.633" starttime="20170519 15:07:14.948"></status>
+</kw>
+<kw name="Close Eyes Session" library="RobotAppEyes">
+<doc>Closes a session and returns the results of the session.</doc>
+<status status="PASS" endtime="20170519 15:07:35.293" starttime="20170519 15:07:33.633"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170519 15:07:35.701" starttime="20170519 15:07:35.294"></status>
+</kw>
+<status status="PASS" endtime="20170519 15:07:35.701" critical="yes" starttime="20170519 15:06:27.255"></status>
+</test>
+<status status="PASS" endtime="20170519 15:07:35.702" starttime="20170519 15:06:26.484"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Appli-Sauce2" pass="1">Appli-Sauce2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

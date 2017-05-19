@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170516 17:30:37.814" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/Saucelabs-simple/tests/sauce.robot" id="s1" name="Sauce">
+<test id="s1-t1" name="Load Home Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+</arguments>
+<msg timestamp="20170516 17:30:37.907" level="INFO">Opening browser 'chrome' to base url 'https://z.co.nz/' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170516 17:33:28.559" starttime="20170516 17:30:37.907"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Apply for your Z Card</arg>
+</arguments>
+<status status="PASS" endtime="20170516 17:33:32.316" starttime="20170516 17:33:28.560"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170516 17:33:33.083" starttime="20170516 17:33:32.317"></status>
+</kw>
+<doc>Test that as a user I can connect to SauceLabs</doc>
+<tags>
+<tag>regression</tag>
+</tags>
+<status status="PASS" endtime="20170516 17:33:33.083" critical="yes" starttime="20170516 17:30:37.906"></status>
+</test>
+<doc>This is a demo for connecting to SauceLabs in the most basic way</doc>
+<status status="PASS" endtime="20170516 17:33:33.085" starttime="20170516 17:30:37.816"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">regression</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Sauce" pass="1">Sauce</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

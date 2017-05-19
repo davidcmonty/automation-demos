@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170517 15:53:40.525" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/applitools/tests/applitools.robot" id="s1" name="Applitools">
+<test id="s1-t1" name="Load Home Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170517 15:53:40.842" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz/'</msg>
+<status status="PASS" endtime="20170517 15:53:47.623" starttime="20170517 15:53:40.842"></status>
+</kw>
+<kw name="Open Eyes Session" library="RobotAppEyes">
+<doc>Starts a session with the Applitools Eyes Website.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${APPLITOOLS_APPNAME}</arg>
+<arg>${APPLITOOLS_TESTNAME}</arg>
+<arg>${APPLITOOLS_KEY}</arg>
+<arg>width=${PAGE_WIDTH}</arg>
+<arg>height=${PAGE_HEIGHT}</arg>
+<arg>osname=${OS}</arg>
+<arg>browsername=${BROWSER}</arg>
+<arg>matchlevel=${MATCH_LEVEL}</arg>
+</arguments>
+<status status="PASS" endtime="20170517 15:53:50.371" starttime="20170517 15:53:47.623"></status>
+</kw>
+<kw name="Check Eyes Window" library="RobotAppEyes">
+<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
+<arguments>
+<arg>Z Home</arg>
+</arguments>
+<status status="PASS" endtime="20170517 15:54:03.300" starttime="20170517 15:53:50.371"></status>
+</kw>
+<kw name="Close Eyes Session" library="RobotAppEyes">
+<doc>Closes a session and returns the results of the session.</doc>
+<status status="PASS" endtime="20170517 15:54:04.222" starttime="20170517 15:54:03.300"></status>
+</kw>
+<doc>Test that as a user I can load the home page and confirm the layout is stable</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" endtime="20170517 15:54:04.223" critical="yes" starttime="20170517 15:53:40.841"></status>
+</test>
+<doc>This is a demo</doc>
+<status status="PASS" endtime="20170517 15:54:04.224" starttime="20170517 15:53:40.527"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Regression</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Applitools" pass="1">Applitools</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
