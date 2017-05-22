@@ -1,78 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170519 15:06:26.482" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/saucelabs-applitools/tests/appli-sauce2.robot" id="s1" name="Appli-Sauce2">
-<test id="s1-t1" name="Demo Test On SauceLabs">
+<robot generated="20170523 10:08:23.581" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/saucelabs-applitools/tests/applitools-baseline.robot" id="s1" name="Applitools-Baseline">
+<test id="s1-t1" name="Test1">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${START_URL}</arg>
-<arg>chrome</arg>
-<arg>None</arg>
-<arg>remote_url=${SAUCE_REMOTEURL}</arg>
-<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<arg>${Applitools-url}</arg>
+<arg>Chrome</arg>
 </arguments>
-<msg timestamp="20170519 15:06:27.256" level="INFO">Opening browser 'chrome' to base url 'https://z.co.nz' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
-<status status="PASS" endtime="20170519 15:06:44.958" starttime="20170519 15:06:27.256"></status>
+<msg timestamp="20170523 10:08:23.721" level="INFO">Opening browser 'Chrome' to base url 'https://www.applitools.com/'</msg>
+<status status="PASS" endtime="20170523 10:08:29.204" starttime="20170523 10:08:23.721"></status>
 </kw>
 <kw name="Open Eyes Session" library="RobotAppEyes">
 <doc>Starts a session with the Applitools Eyes Website.</doc>
 <arguments>
-<arg>${START_URL}</arg>
+<arg>${Applitools-url}</arg>
 <arg>${Applitools-AppName}</arg>
 <arg>${Applitools-TestName}</arg>
 <arg>${Applitools-Key}</arg>
 <arg>width=${Width}</arg>
 <arg>height=${Height}</arg>
-<arg>includeEyesLog=False</arg>
 <arg>matchlevel=${MatchLevel}</arg>
+<arg>batchName=${firstBatchName}</arg>
+<arg>baselineName=${baselineName}</arg>
 </arguments>
-<status status="PASS" endtime="20170519 15:06:47.830" starttime="20170519 15:06:44.958"></status>
+<msg timestamp="20170523 10:08:29.205" level="FAIL">Keyword 'RobotAppEyes.Open Eyes Session' got positional argument after named arguments.</msg>
+<status status="FAIL" endtime="20170523 10:08:29.205" starttime="20170523 10:08:29.205"></status>
 </kw>
-<kw name="Check Eyes Window" library="RobotAppEyes">
-<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
-<arguments>
-<arg>Main Page New</arg>
-<arg>force_full_page_screenshot=True</arg>
-</arguments>
-<status status="PASS" endtime="20170519 15:07:13.904" starttime="20170519 15:06:47.830"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${button}</arg>
-</arguments>
-<msg timestamp="20170519 15:07:13.905" level="INFO">Clicking element 'css=button'.</msg>
-<status status="PASS" endtime="20170519 15:07:14.948" starttime="20170519 15:07:13.905"></status>
-</kw>
-<kw name="Check Eyes Window" library="RobotAppEyes">
-<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
-<arguments>
-<arg>Features Page New</arg>
-<arg>force_full_page_screenshot=True</arg>
-</arguments>
-<status status="PASS" endtime="20170519 15:07:33.633" starttime="20170519 15:07:14.948"></status>
-</kw>
-<kw name="Close Eyes Session" library="RobotAppEyes">
-<doc>Closes a session and returns the results of the session.</doc>
-<status status="PASS" endtime="20170519 15:07:35.293" starttime="20170519 15:07:33.633"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170519 15:07:35.701" starttime="20170519 15:07:35.294"></status>
-</kw>
-<status status="PASS" endtime="20170519 15:07:35.701" critical="yes" starttime="20170519 15:06:27.255"></status>
+<status status="FAIL" endtime="20170523 10:08:29.206" critical="yes" starttime="20170523 10:08:23.721">Keyword 'RobotAppEyes.Open Eyes Session' got positional argument after named arguments.</status>
 </test>
-<status status="PASS" endtime="20170519 15:07:35.702" starttime="20170519 15:06:26.484"></status>
+<test id="s1-t2" name="Test2">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${Applitools-url}</arg>
+<arg>Firefox</arg>
+</arguments>
+<msg timestamp="20170523 10:08:29.207" level="INFO">Opening browser 'Firefox' to base url 'https://www.applitools.com/'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170523 10:08:30.759" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170523 10:08:30.760" starttime="20170523 10:08:30.314"></status>
+</kw>
+<msg timestamp="20170523 10:08:30.760" level="FAIL">WebDriverException: Message: Unable to find a matching set of capabilities
+</msg>
+<status status="FAIL" endtime="20170523 10:08:30.761" starttime="20170523 10:08:29.207"></status>
+</kw>
+<status status="FAIL" endtime="20170523 10:08:30.762" critical="yes" starttime="20170523 10:08:29.206">WebDriverException: Message: Unable to find a matching set of capabilities
+</status>
+</test>
+<status status="FAIL" endtime="20170523 10:08:30.763" starttime="20170523 10:08:23.583"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Appli-Sauce2" pass="1">Appli-Sauce2</stat>
+<stat fail="2" id="s1" name="Applitools-Baseline" pass="0">Applitools-Baseline</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,61 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170517 15:53:40.525" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Automation Demos/applitools/tests/applitools.robot" id="s1" name="Applitools">
-<test id="s1-t1" name="Load Home Page">
+<robot generated="20170523 10:34:18.453" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/applitools/tests/applitools-baseline.robot" id="s1" name="Applitools-Baseline">
+<test id="s1-t1" name="Test1">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>${Applitools-url}</arg>
+<arg>Chrome</arg>
 </arguments>
-<msg timestamp="20170517 15:53:40.842" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz/'</msg>
-<status status="PASS" endtime="20170517 15:53:47.623" starttime="20170517 15:53:40.842"></status>
+<msg timestamp="20170523 10:34:18.632" level="INFO">Opening browser 'Chrome' to base url 'https://www.applitools.com/'</msg>
+<status status="PASS" endtime="20170523 10:34:23.967" starttime="20170523 10:34:18.632"></status>
 </kw>
 <kw name="Open Eyes Session" library="RobotAppEyes">
 <doc>Starts a session with the Applitools Eyes Website.</doc>
 <arguments>
-<arg>${URL}</arg>
-<arg>${APPLITOOLS_APPNAME}</arg>
-<arg>${APPLITOOLS_TESTNAME}</arg>
-<arg>${APPLITOOLS_KEY}</arg>
-<arg>width=${PAGE_WIDTH}</arg>
-<arg>height=${PAGE_HEIGHT}</arg>
-<arg>osname=${OS}</arg>
-<arg>browsername=${BROWSER}</arg>
-<arg>matchlevel=${MATCH_LEVEL}</arg>
+<arg>appname=${Applitools-AppName}</arg>
+<arg>testname=${Applitools-TestName}</arg>
+<arg>apikey=${Applitools-Key}</arg>
+<arg>width=${Width}</arg>
+<arg>height=${Height}</arg>
+<arg>matchlevel=${MatchLevel}</arg>
+<arg>batchName=${firstBatchName}</arg>
+<arg>baselineName=${baselineName}</arg>
 </arguments>
-<status status="PASS" endtime="20170517 15:53:50.371" starttime="20170517 15:53:47.623"></status>
+<msg timestamp="20170523 10:34:23.968" level="FAIL">Keyword 'RobotAppEyes.Open Eyes Session' got positional argument after named arguments.</msg>
+<status status="FAIL" endtime="20170523 10:34:23.968" starttime="20170523 10:34:23.967"></status>
 </kw>
-<kw name="Check Eyes Window" library="RobotAppEyes">
-<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
-<arguments>
-<arg>Z Home</arg>
-</arguments>
-<status status="PASS" endtime="20170517 15:54:03.300" starttime="20170517 15:53:50.371"></status>
-</kw>
-<kw name="Close Eyes Session" library="RobotAppEyes">
-<doc>Closes a session and returns the results of the session.</doc>
-<status status="PASS" endtime="20170517 15:54:04.222" starttime="20170517 15:54:03.300"></status>
-</kw>
-<doc>Test that as a user I can load the home page and confirm the layout is stable</doc>
-<tags>
-<tag>Regression</tag>
-</tags>
-<status status="PASS" endtime="20170517 15:54:04.223" critical="yes" starttime="20170517 15:53:40.841"></status>
+<status status="FAIL" endtime="20170523 10:34:23.968" critical="yes" starttime="20170523 10:34:18.631">Keyword 'RobotAppEyes.Open Eyes Session' got positional argument after named arguments.</status>
 </test>
-<doc>This is a demo</doc>
-<status status="PASS" endtime="20170517 15:54:04.224" starttime="20170517 15:53:40.527"></status>
+<test id="s1-t2" name="Test2">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${Applitools-url}</arg>
+<arg>Firefox</arg>
+</arguments>
+<msg timestamp="20170523 10:34:23.970" level="INFO">Opening browser 'Firefox' to base url 'https://www.applitools.com/'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170523 10:34:25.572" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170523 10:34:25.573" starttime="20170523 10:34:25.130"></status>
+</kw>
+<msg timestamp="20170523 10:34:25.574" level="FAIL">WebDriverException: Message: Unable to find a matching set of capabilities
+</msg>
+<status status="FAIL" endtime="20170523 10:34:25.574" starttime="20170523 10:34:23.970"></status>
+</kw>
+<status status="FAIL" endtime="20170523 10:34:25.576" critical="yes" starttime="20170523 10:34:23.969">WebDriverException: Message: Unable to find a matching set of capabilities
+</status>
+</test>
+<status status="FAIL" endtime="20170523 10:34:25.576" starttime="20170523 10:34:18.455"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Regression</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Applitools" pass="1">Applitools</stat>
+<stat fail="2" id="s1" name="Applitools-Baseline" pass="0">Applitools-Baseline</stat>
 </suite>
 </statistics>
 <errors>

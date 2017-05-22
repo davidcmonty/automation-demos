@@ -1,34 +1,32 @@
 *** Settings ***
-Documentation  This is a demo
+Documentation  This is a demo to test connection to Applitools
 
 Library  Selenium2Library
-Library  RobotAppEyes
-#test from heyday
-#robot -d results tests/applitools.robot
+Library  RobotAppEyes/RobotAppEyes.py
 
 *** Variables ***
-${URL}  http://z.co.nz/
-${BROWSER}  chrome
+### General ###
+${StartURL}  http://z.co.nz/
+${Browser}  Chrome
 ${OS}  Mac OS X 10.11
-${APPLITOOLS_KEY}  D4HLYgJyunaIGwLWcnCzJdXOrkD9e3jeBIBgmrdFmwU110
 
-${APPLITOOLS_APPNAME}  Z Desktop
-${APPLITOOLS_TESTNAME}  Z Home Page
-${PAGE_WIDTH}  1600
-${PAGE_HEIGHT}  1200
-${MATCH_LEVEL}  LAYOUT
-
+### Applitools Variables ###
+${Applitools-Key}  D4HLYgJyunaIGwLWcnCzJdXOrkD9e3jeBIBgmrdFmwU110
+${Applitools-AppName}  My Web/App Name
+${Applitools-TestName}  My Test Name
+${PageWidth}  1600
+${PageHeight}  1200
+${MatchLevel}  LAYOUT
+${baselineName}  MyBaseline
 
 *** Test Cases ***
 Load Home Page
-    [Documentation]  Test that as a user I can load the home page and confirm the layout is stable
+    [Documentation]  Test that as a user I can connect to Applitools
     [Tags]  Regression
 
-    open browser  ${URL}  ${BROWSER}
-    open eyes session  ${URL}  ${APPLITOOLS_APPNAME}  ${APPLITOOLS_TESTNAME}  ${APPLITOOLS_KEY}  width=${PAGE_WIDTH}  height=${PAGE_HEIGHT}  osname=${OS}  browsername=${BROWSER}  matchlevel=${MATCH_LEVEL}
+    open browser  ${StartURL}  ${Browser}
+    open eyes session  ${StartURL}  ${Applitools-AppName}  ${Applitools-TestName}  ${Applitools-Key}  width=${PageWidth}  height=${PageHeight}  osname=${OS}  browsername=${Browser}  matchlevel=${MatchLevel}
     check eyes window  Z Home
     close eyes session
 
 *** Keywords ***
-
-We‘ll need your email to get in touch if you win
