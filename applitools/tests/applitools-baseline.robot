@@ -1,6 +1,6 @@
 *** Settings ***
 Library                                             Selenium2Library
-Library                                             RobotAppEyes
+Library                                             RobotAppEyes/RobotAppEyes.py
 
 *** Variables ***
 ### Selenium2Library Variables ###
