@@ -29,7 +29,7 @@ ${baselineName}                                     myBaselineName
 Test1
     [Documentation]
     Open Browser                                    ${Applitools-url}       Chrome
-    Open Eyes Session                               ${Applitools-url}  ${Applitools-AppName}  ${Applitools-TestName}  ${Applitools-Key}  width=${Width}  height=${Height}  matchlevel=${MatchLevel}  batchName=${firstBatchName}  baselineName=${baselineName}
+    Open Eyes Session                               ${Applitools-url}  ${Applitools-AppName}  ${Applitools-TestName}  ${Applitools-Key}  width=${Width}  height=${Height}  matchlevel=${MatchLevel}   baselineName=${baselineName}
     Check Eyes Window                               Main Page New
     Close Browser
     Close Eyes Session
@@ -38,7 +38,7 @@ Test1
 Test2
     [Documentation]
     Open Browser                                    ${Applitools-url}       Firefox
-    Open Eyes Session                               ${Applitools-url}  ${Applitools-AppName}  ${Applitools-TestName}  ${Applitools-Key}  width=${Width}  height=${Height}  matchlevel=${MatchLevel}  batchName=${firstBatchName}  baselineName=${baselineName}
+    Open Eyes Session                               ${Applitools-url}  ${Applitools-AppName}  ${Applitools-TestName}  ${Applitools-Key}  width=${Width}  height=${Height}  matchlevel=${MatchLevel}  baselineName=${baselineName}
     Check Eyes Window                               Main Page New
     Close Browser
     Close Eyes Session
