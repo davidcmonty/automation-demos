@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170524 17:31:34.802" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/applitools/tests/appli-example.robot" id="s1" name="Appli-Example">
+<robot generated="20170525 17:53:12.690" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/fullmonty/Documents/Business/Automaton/Development/Automation Demos/applitools/tests/appli-example.robot" id="s1" name="Appli-Example">
 <test id="s1-t1" name="Test Saucelabs and Applitools">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
@@ -10,15 +10,15 @@
 <arg>remote_url=${REMOTE_URL}</arg>
 <arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
 </arguments>
-<msg timestamp="20170524 17:31:35.044" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz/' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
-<status status="PASS" endtime="20170524 17:32:06.654" starttime="20170524 17:31:35.043"></status>
+<msg timestamp="20170525 17:53:12.890" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz/' through remote server at 'http://heydaytesters:95dfab42-65b8-4fec-818c-b777f16593d8@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170525 17:53:29.128" starttime="20170525 17:53:12.889"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>Find a Z near you</arg>
 </arguments>
-<status status="PASS" endtime="20170524 17:32:07.100" starttime="20170524 17:32:06.654"></status>
+<status status="PASS" endtime="20170525 17:53:29.572" starttime="20170525 17:53:29.129"></status>
 </kw>
 <kw name="Open Eyes Session" library="RobotAppEyes">
 <doc>Starts a session with the Applitools Eyes Website.</doc>
@@ -31,38 +31,41 @@
 <arg>matchlevel=${MatchLevel}</arg>
 <arg>baselineName=${baselineName}</arg>
 </arguments>
-<status status="PASS" endtime="20170524 17:32:07.102" starttime="20170524 17:32:07.101"></status>
+<status status="PASS" endtime="20170525 17:53:29.574" starttime="20170525 17:53:29.573"></status>
 </kw>
 <kw name="Check Eyes Window" library="RobotAppEyes">
 <doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
 <arguments>
 <arg>Main Page New</arg>
 </arguments>
-<status status="PASS" endtime="20170524 17:32:30.554" starttime="20170524 17:32:07.102"></status>
+<status status="PASS" endtime="20170525 17:53:45.767" starttime="20170525 17:53:29.574"></status>
 </kw>
 <kw name="Close Eyes Session" library="RobotAppEyes">
 <doc>Closes a session and returns the results of the session.</doc>
-<msg timestamp="20170524 17:32:31.380" level="FAIL">TestFailedError: 'MyTestName2' of 'MyAppName2'. See details at https://eyes.applitools.com/app/batches/00000251906696867848/00000251906696867582?accountId=FynRIyN8I0qkg3JDgBWl0A~~ , Existing test [ steps: 1, matches: 0, mismatches: 1, missing: 0 ], URL: https://eyes.applitools.com/app/batches/00000251906696867848/00000251906696867582?accountId=FynRIyN8I0qkg3JDgBWl0A~~</msg>
-<status status="FAIL" endtime="20170524 17:32:31.381" starttime="20170524 17:32:30.554"></status>
+<status status="PASS" endtime="20170525 17:53:46.611" starttime="20170525 17:53:45.767"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170525 17:53:47.034" starttime="20170525 17:53:46.611"></status>
 </kw>
 <doc>This is a test that connects to SauceLabs and Applitools</doc>
 <tags>
 <tag>app-sauce</tag>
 </tags>
-<status status="FAIL" endtime="20170524 17:32:31.381" critical="yes" starttime="20170524 17:31:35.042">TestFailedError: 'MyTestName2' of 'MyAppName2'. See details at https://eyes.applitools.com/app/batches/00000251906696867848/00000251906696867582?accountId=FynRIyN8I0qkg3JDgBWl0A~~ , Existing test [ steps: 1, matches: 0, mismatches: 1, missing: 0 ], URL: https://eyes.applitools.com/app/batches/00000251906696867848/00000251906696867582?accountId=FynRIyN8I0qkg3JDgBWl0A~~</status>
+<status status="PASS" endtime="20170525 17:53:47.034" critical="yes" starttime="20170525 17:53:12.888"></status>
 </test>
-<status status="FAIL" endtime="20170524 17:32:31.382" starttime="20170524 17:31:34.804"></status>
+<status status="PASS" endtime="20170525 17:53:47.035" starttime="20170525 17:53:12.692"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">app-sauce</stat>
+<stat fail="0" pass="1">app-sauce</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Appli-Example" pass="0">Appli-Example</stat>
+<stat fail="0" id="s1" name="Appli-Example" pass="1">Appli-Example</stat>
 </suite>
 </statistics>
 <errors>
