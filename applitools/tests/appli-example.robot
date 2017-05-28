@@ -57,6 +57,8 @@ Test Saucelabs and Applitools
     close browser
 
 
+
+
 Test Chrome
     [Documentation]                                 This is a test that creates a baseline of Chrome
     [Tags]                                          baseline

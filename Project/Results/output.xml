@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170527 11:00:33.430" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/fullmonty/Documents/Business/Automaton/Development/Automation Demos/Project/tests/project.robot" id="s1" name="Project">
+<test id="s1-t1" name="User can open home page">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170527 11:00:33.532" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170527 11:00:35.244" starttime="20170527 11:00:33.532"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:35.244" starttime="20170527 11:00:33.532"></status>
+</kw>
+<kw name="Load Home Page" library="HomePage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+</arguments>
+<msg timestamp="20170527 11:00:35.246" level="INFO">Opening url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170527 11:00:37.984" starttime="20170527 11:00:35.245"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:37.984" starttime="20170527 11:00:35.245"></status>
+</kw>
+<kw name="Verify Home Page Loaded" library="HomePage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Find a Z near you</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.006" starttime="20170527 11:00:37.985"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:38.007" starttime="20170527 11:00:37.985"></status>
+</kw>
+<kw name="Verify Main Navigation" library="Header">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Motorists</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.029" starttime="20170527 11:00:38.007"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Business</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.051" starttime="20170527 11:00:38.030"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>About Z</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.072" starttime="20170527 11:00:38.051"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Why</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.091" starttime="20170527 11:00:38.072"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Contact</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.110" starttime="20170527 11:00:38.092"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Motorists</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.118" starttime="20170527 11:00:38.111"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Investor Centre</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.137" starttime="20170527 11:00:38.118"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Find us</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.156" starttime="20170527 11:00:38.137"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${SearchForm}</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:38.194" starttime="20170527 11:00:38.156"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:38.194" starttime="20170527 11:00:38.007"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170527 11:00:38.278" starttime="20170527 11:00:38.195"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:38.278" starttime="20170527 11:00:38.195"></status>
+</kw>
+<doc>Test that as a user I can open the home page and see the locator widget</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" endtime="20170527 11:00:38.278" critical="yes" starttime="20170527 11:00:33.531"></status>
+</test>
+<test id="s1-t2" name="User can see error page">
+<kw type="setup" name="Begin Web Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170527 11:00:38.281" level="INFO">Opening browser 'chrome' to base url 'about:blank'</msg>
+<status status="PASS" endtime="20170527 11:00:39.947" starttime="20170527 11:00:38.280"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:39.948" starttime="20170527 11:00:38.280"></status>
+</kw>
+<kw name="Load Error Page" library="ErrorPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartUrl}/xyz</arg>
+</arguments>
+<msg timestamp="20170527 11:00:39.949" level="INFO">Opening url 'http://z.co.nz/xyz'</msg>
+<status status="PASS" endtime="20170527 11:00:45.703" starttime="20170527 11:00:39.949"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:45.703" starttime="20170527 11:00:39.948"></status>
+</kw>
+<kw name="Verify Error Page Loaded" library="ErrorPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>You found the hole in our donut...</arg>
+</arguments>
+<status status="PASS" endtime="20170527 11:00:45.730" starttime="20170527 11:00:45.703"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:45.730" starttime="20170527 11:00:45.703"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="Common">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170527 11:00:45.810" starttime="20170527 11:00:45.731"></status>
+</kw>
+<status status="PASS" endtime="20170527 11:00:45.810" starttime="20170527 11:00:45.730"></status>
+</kw>
+<doc>Test that as a user I can see the error page when I browse to a page that does not exist</doc>
+<tags>
+<tag>Regression</tag>
+</tags>
+<status status="PASS" endtime="20170527 11:00:45.811" critical="yes" starttime="20170527 11:00:38.279"></status>
+</test>
+<status status="PASS" endtime="20170527 11:00:45.812" starttime="20170527 11:00:33.433"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="2">Regression</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Project" pass="2">Project</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

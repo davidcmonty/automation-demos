@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170528 12:07:22.055" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/fullmonty/Documents/Business/Automaton/Development/Automation Demos/Project/tests/project.robot" id="s1" name="Project">
+<test id="s1-t1" name="User can not login to cms">
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${InvalidUsername}</arg>
+<arg>${CMS-Password}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:22.227" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:07:26.703" starttime="20170528 12:07:22.226"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:26.703" starttime="20170528 12:07:22.226"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:07:26.705" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:07:28.731" starttime="20170528 12:07:26.704"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:28.731" starttime="20170528 12:07:26.704"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:28.753" starttime="20170528 12:07:28.732"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:28.772" starttime="20170528 12:07:28.753"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:28.772" starttime="20170528 12:07:28.731"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:28.773" level="INFO">Typing text '!rg^5g&amp;*dwju@heyday.co.nz' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:07:28.924" starttime="20170528 12:07:28.773"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:28.924" level="INFO">Typing text 'Rhygdesbot!' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:07:29.034" starttime="20170528 12:07:28.924"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:29.035" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:07:30.209" starttime="20170528 12:07:29.035"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:30.209" starttime="20170528 12:07:29.034"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:30.221" starttime="20170528 12:07:30.209"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:30.229" starttime="20170528 12:07:30.221"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:30.230" starttime="20170528 12:07:30.209"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:30.230" starttime="20170528 12:07:22.225"></status>
+</kw>
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${CMS-Username}</arg>
+<arg>${InvalidPassword}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:30.231" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:07:35.231" starttime="20170528 12:07:30.231"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:35.231" starttime="20170528 12:07:30.231"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:07:35.232" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:07:37.485" starttime="20170528 12:07:35.232"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:37.486" starttime="20170528 12:07:35.232"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:37.507" starttime="20170528 12:07:37.486"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:37.526" starttime="20170528 12:07:37.507"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:37.526" starttime="20170528 12:07:37.486"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:37.526" level="INFO">Typing text 'dev@heyday.co.nz' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:07:37.648" starttime="20170528 12:07:37.526"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:37.648" level="INFO">Typing text '!rg^5g&amp;*dwju' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:07:37.758" starttime="20170528 12:07:37.648"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:37.759" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:07:39.047" starttime="20170528 12:07:37.759"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:39.047" starttime="20170528 12:07:37.759"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:39.063" starttime="20170528 12:07:39.047"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:39.071" starttime="20170528 12:07:39.063"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:39.071" starttime="20170528 12:07:39.047"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:39.071" starttime="20170528 12:07:30.230"></status>
+</kw>
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${InvalidUsername}</arg>
+<arg>${InvalidPassword}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:39.073" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:07:43.849" starttime="20170528 12:07:39.072"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:43.850" starttime="20170528 12:07:39.072"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:07:43.851" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:07:45.936" starttime="20170528 12:07:43.850"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:45.936" starttime="20170528 12:07:43.850"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:45.958" starttime="20170528 12:07:45.937"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:45.978" starttime="20170528 12:07:45.958"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:45.978" starttime="20170528 12:07:45.937"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:45.979" level="INFO">Typing text '!rg^5g&amp;*dwju@heyday.co.nz' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:07:46.130" starttime="20170528 12:07:45.978"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:46.131" level="INFO">Typing text '!rg^5g&amp;*dwju' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:07:46.234" starttime="20170528 12:07:46.130"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:46.234" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:07:47.337" starttime="20170528 12:07:46.234"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:47.338" starttime="20170528 12:07:46.234"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:47.347" starttime="20170528 12:07:47.338"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:47.367" starttime="20170528 12:07:47.347"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:47.367" starttime="20170528 12:07:47.338"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:47.367" starttime="20170528 12:07:39.072"></status>
+</kw>
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${CMS-Password}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:47.369" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:07:52.039" starttime="20170528 12:07:47.368"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:52.040" starttime="20170528 12:07:47.368"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:07:52.041" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:07:54.074" starttime="20170528 12:07:52.041"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:54.074" starttime="20170528 12:07:52.040"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:54.096" starttime="20170528 12:07:54.075"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:54.117" starttime="20170528 12:07:54.096"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:54.117" starttime="20170528 12:07:54.075"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:54.117" level="INFO">Typing text '' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:07:54.194" starttime="20170528 12:07:54.117"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:54.195" level="INFO">Typing text 'Rhygdesbot!' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:07:54.311" starttime="20170528 12:07:54.195"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:54.311" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:07:54.393" starttime="20170528 12:07:54.311"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:54.393" starttime="20170528 12:07:54.311"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:54.403" starttime="20170528 12:07:54.394"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:07:54.414" starttime="20170528 12:07:54.404"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:54.414" starttime="20170528 12:07:54.393"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:54.414" starttime="20170528 12:07:47.367"></status>
+</kw>
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${CMS-Username}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:07:54.416" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:07:59.227" starttime="20170528 12:07:54.416"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:07:59.228" starttime="20170528 12:07:54.415"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:07:59.229" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:08:01.341" starttime="20170528 12:07:59.228"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:01.341" starttime="20170528 12:07:59.228"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:01.365" starttime="20170528 12:08:01.342"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:01.388" starttime="20170528 12:08:01.365"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:01.388" starttime="20170528 12:08:01.341"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:01.389" level="INFO">Typing text 'dev@heyday.co.nz' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:08:01.519" starttime="20170528 12:08:01.388"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:01.519" level="INFO">Typing text '' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:08:01.602" starttime="20170528 12:08:01.519"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:01.603" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:08:01.679" starttime="20170528 12:08:01.603"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:01.679" starttime="20170528 12:08:01.602"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:01.689" starttime="20170528 12:08:01.679"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:01.700" starttime="20170528 12:08:01.689"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:01.700" starttime="20170528 12:08:01.679"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:01.700" starttime="20170528 12:07:54.414"></status>
+</kw>
+<kw name="Login with invalid details" library="LoginPage">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Begin Local Test" library="Common">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:01.701" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170528 12:08:06.249" starttime="20170528 12:08:01.701"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:06.250" starttime="20170528 12:08:01.701"></status>
+</kw>
+<kw name="Load cms login page" library="LoginPage">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}/admin</arg>
+</arguments>
+<msg timestamp="20170528 12:08:06.251" level="INFO">Opening url 'http://z.co.nz/admin'</msg>
+<status status="PASS" endtime="20170528 12:08:08.411" starttime="20170528 12:08:06.251"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:08.411" starttime="20170528 12:08:06.250"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:08.432" starttime="20170528 12:08:08.412"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:08.452" starttime="20170528 12:08:08.433"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:08.452" starttime="20170528 12:08:08.411"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginUsername}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:08.453" level="INFO">Typing text '' into text field 'css=#MemberLoginForm_LoginForm_Email'</msg>
+<status status="PASS" endtime="20170528 12:08:08.530" starttime="20170528 12:08:08.452"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${LoginPassword}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:08.530" level="INFO">Typing text '' into text field 'css=#MemberLoginForm_LoginForm_Password'</msg>
+<status status="PASS" endtime="20170528 12:08:08.610" starttime="20170528 12:08:08.530"></status>
+</kw>
+<kw name="Sumbit login" library="LoginPage">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${LoginButton}</arg>
+</arguments>
+<msg timestamp="20170528 12:08:08.611" level="INFO">Clicking element 'css=#MemberLoginForm_LoginForm_action_dologin'.</msg>
+<status status="PASS" endtime="20170528 12:08:08.689" starttime="20170528 12:08:08.611"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:08.690" starttime="20170528 12:08:08.610"></status>
+</kw>
+<kw name="Confirm cms login page loads" library="LoginPage">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Log in</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:08.700" starttime="20170528 12:08:08.690"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Remember me next time?</arg>
+</arguments>
+<status status="PASS" endtime="20170528 12:08:08.710" starttime="20170528 12:08:08.700"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:08.711" starttime="20170528 12:08:08.690"></status>
+</kw>
+<status status="PASS" endtime="20170528 12:08:08.711" starttime="20170528 12:08:01.700"></status>
+</kw>
+<doc>As a user I can...</doc>
+<tags>
+<tag>NoLogin</tag>
+</tags>
+<status status="PASS" endtime="20170528 12:08:08.711" critical="yes" starttime="20170528 12:07:22.225"></status>
+</test>
+<status status="PASS" endtime="20170528 12:08:08.712" starttime="20170528 12:07:22.058"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">NoLogin</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Project" pass="1">Project</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
