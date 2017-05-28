@@ -13,7 +13,6 @@ ${EMPTY}
 ### Applitools ###
 ${AppName}                                          Z Website
 ${TestName}                                         MyTestName
-${ApplitoolsKey}                                    D4HLYgJyunaIGwLWcnCzJdXOrkD9e3jeBIBgmrdFmwU110
 ${Width}                                            800
 ${Height}                                           600
 ${MatchLevel}                                       LAYOUT2
@@ -25,17 +24,13 @@ ${SauceLabsChrome}                                  name:Win10 + Chrome,platform
 ${SauceLabsIE11}                                    name:Win10 + IE11,platform:Windows 8.1,browserName:internet explorer,version:11.0
 ${SaucelabsEdge}                                    name:Win10 + MS Edge,platform:Windows 10,browserName:MicrosoftEdge,version:14.14393
 
+
 *** Keywords ***
 Begin Local Test
     open browser                                    ${StartUrl}  ${Browser}
 
+Begin Remote Test
+    open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SaucelabsEdge}
+
 End Test
     close browser
-
-Confirm Page Layout
-    [Arguments]                                     ${TestName}  ${WindowName}  ${StartURL}  ${Browser}  ${BatchName}
-
-    open eyes session                               appname=${AppName}  testname=${TestName}  apikey=${ApplitoolsKey}  matchlevel=${MatchLevel}  batchName=${BatchName}
-    check eyes window                               ${WindowName}  force_full_page_screenshot=True
-    close eyes session
-

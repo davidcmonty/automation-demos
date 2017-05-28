@@ -5,6 +5,11 @@ Resource                                            ../../Resources/Common.robot
 
 *** Variables ***
 
+### Search ###
+${SearchTerm1}                                      Fuel
+${SearchTerm2}                                      Fly Buys
+${SearchTerm3}                                      News
+
 ### Selectors ###
 ${SearchField}                                      css=#Input_search
 ${SearchButton}                                     css=#Submit_search
@@ -13,11 +18,6 @@ ${SearchQuery}                                      css=.searchresults__formcont
 
 
 *** Keywords ***
-
-### Home Page ###
-Can load home page
-    go to                                           ${StartUrl}
-
 Can load header
     wait until page contains                        Motorists
     wait until page contains                        Business
@@ -27,8 +27,6 @@ Can load header
     wait until page contains                        Investor Centre
     wait until page contains                        Find us
 
-
-### Search ###
 Can do search
     [Arguments]                                     ${SearchTerm}
 
@@ -36,3 +34,4 @@ Can do search
     click element                                   ${SearchButton}
     wait until page contains                        Results for '${SearchTerm}'
     element should be visible                       ${Pagination}
+    Can load header

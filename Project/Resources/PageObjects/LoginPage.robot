@@ -46,7 +46,6 @@ Confirm logged in
 Login with invalid details
     [Arguments]                                     ${username}  ${password}
 
-    Begin Local Test
     Load cms login page
     Confirm cms login page loads
     input text                                      ${LoginUsername}  ${username}
