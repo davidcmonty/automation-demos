@@ -9,7 +9,7 @@ User can see chrome layout
     [Documentation]                                 Test that as a user I can load the home page and see the desktop layout is correct
     [Tags]                                          Layout
 
-    open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SaucelabsEdge}
+    open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SauceLabsChrome}
     Verify Page Layout                              Win10 + Chrome 58.0  ${AppName}: Home Page  ${StartUrl}  ${Browser}  Batch:${AppName}: Home Page
     close browser
 

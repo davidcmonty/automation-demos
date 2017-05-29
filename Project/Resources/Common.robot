@@ -29,8 +29,3 @@ ${SaucelabsEdge}                                    name:Win10 + MS Edge,platfor
 Begin Local Test
     open browser                                    ${StartUrl}  ${Browser}
 
-Begin Remote Test
-    open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SaucelabsEdge}
-
-End Test
-    close browser

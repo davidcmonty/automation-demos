@@ -6,12 +6,10 @@ Library                                             AppiumLibrary
 ${RemoteURL}                                        http://127.0.0.1:4723/wd/hub
 ${PlatformName}                                     iOS
 ${PlatformVersion}                                  10.2
-${DeviceName}                                       iPhone Simulator
-${AppLocation}                                      /Users/ashekhara/Library/Developer/Xcode/DerivedData/WebDriverAgent-brdadhpuduowllgivnnvuygpwhzy/Build/Products/Debug-iphonesimulator/IntegrationApp.app
-${BundleID}                                         nz.co.wpp.debug
-${AutomationName}                                   appium
-${AppPackage}                                       co.nz.quantiful.wave.debug
-${AppActivity}                                      co.nz.android.whstl.mobile.StartActivity
+${DeviceName}                                       iPhone 6
+${AppLocation}                                      ${CURDIR}/../Builds/Zapp.app
+${BundleID}                                         com.zenergy.coffeecard.debug
+${AutomationName}                                   XCUITest
 
 
 *** Test Cases ***
@@ -21,5 +19,10 @@ Start ios app
 
     Close All Applications
     Open Application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${AppLocation}  automationName=${AutomationName}  bundleId=${BundleID}
-    Sleep                                           20
-    Close All Applications
+    wait until page contains                        Get great rewards from Z!
+    wait until page contains                        Register
+    click element                                   accessibility_id=Register
+
+
+
+

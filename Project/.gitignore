@@ -8,3 +8,4 @@ npm-debug.log
 /app
 .idea/
 *.png
+Builds/

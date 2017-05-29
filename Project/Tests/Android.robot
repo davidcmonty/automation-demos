@@ -1,16 +1,16 @@
 *** Settings ***
 Library                                             AppiumLibrary
-Library                                             Selenium2Library
 
 
 *** Variables ***
 ${RemoteURL}                                        http://localhost:4723/wd/hub
 ${PlatformName}                                     Android
-${PlatformVersion}                                  6.0.1
-${DeviceName}                                       1b325e10048c2c77
+${PlatformVersion}                                  5.0
+${DeviceName}                                       192.168.57.101:5555
+${AppLocation}                                      ${CURDIR}/../Builds/zapp.apk
 ${AutomationName}                                   appium
-${AppPackage}                                       co.nz.quantiful.wave.debug
-${AppActivity}                                      co.nz.android.whstl.mobile.StartActivity
+${AppPackage}                                       nz.co.zenergy.loyaltycard.android.debug
+${AppActivity}                                      nz.co.zenergy.loyaltycard.android.MainActivity
 
 
 *** Test Cases ***
@@ -19,9 +19,10 @@ Start android app
     [Tags]                                          Android
 
     Close All Applications
-    Open Application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${CURDIR}/../app/prg.apk  automationName=${AutomationName}  appPackage=${AppPackage}  appActivity=${AppActivity}
-    Sleep                                           20
-    Close All Applications
+    Open Application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${AppLocation}  automationName=${AutomationName}  appPackage=${AppPackage}  appActivity=${AppActivity}
+    wait until page contains                        Register
+    click element                                   xpath=//*[contains(@text,'Register')]
+    wait until page contains                        Create an account
 
 
 
