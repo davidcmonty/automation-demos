@@ -5,7 +5,6 @@ Resource                                            ../Resources/Security.robot
 
 *** Test Cases ***
 
-### Home Page ###
 User can see chrome layout
     [Documentation]                                 Test that as a user I can load the home page and see the desktop layout is correct
     [Tags]                                          Layout
@@ -33,7 +32,7 @@ User can see edge layout
 User can see phone layout
     [Documentation]                                 Test that as a user I can load the home page and see the desktop layout is correct
     [Tags]                                          Phone
-
+`
     open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SaucelabsEdge}
     Verify Page Layout                              Phone Layout   ${AppName}: Home Page  ${StartUrl}  ${Browser}  Batch: ${AppName}: Home Page
     close browser

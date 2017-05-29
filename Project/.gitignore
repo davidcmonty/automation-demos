@@ -1,0 +1,9 @@
+#log files
+log.html
+output.xml
+report.html
+npm-debug.log
+#APK file
+/app
+.idea/
+*.png

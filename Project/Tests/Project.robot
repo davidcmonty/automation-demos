@@ -21,7 +21,7 @@ User can not login to cms
     [Template]                                      LoginPage.Login with invalid details
     [Tags]                                          NoLogin
 
-    ${InvalidUsername}      ${Password}
+    ${InvalidUsername}      ${ValidPassword}
     ${ValidUsername}        ${InvalidPassword}
     ${InvalidUsername}      ${InvalidPassword}
     ${EMPTY}                ${ValidPassword}
