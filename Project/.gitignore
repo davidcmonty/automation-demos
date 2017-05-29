@@ -1,6 +1,7 @@
 #log files
 log.html
 output.xml
+*.xml
 report.html
 npm-debug.log
 #APK file
