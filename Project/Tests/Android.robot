@@ -18,7 +18,7 @@ Start android app
     [Documentation]                                 As a user I can...
     [Tags]                                          Android
 
-    Close All Applications
+    close all applications
     Open Application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${AppLocation}  automationName=${AutomationName}  appPackage=${AppPackage}  appActivity=${AppActivity}
     wait until page contains                        Register
     click element                                   xpath=//*[contains(@text,'Register')]
