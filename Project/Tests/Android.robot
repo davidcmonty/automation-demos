@@ -19,10 +19,12 @@ Start android app
     [Tags]                                          Android
 
     close all applications
-    Open Application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${AppLocation}  automationName=${AutomationName}  appPackage=${AppPackage}  appActivity=${AppActivity}
+    open application                                ${RemoteURL}  platformName=${PlatformName}  platformVersion=${PlatformVersion}  deviceName=${DeviceName}  app=${AppLocation}  automationName=${AutomationName}  appPackage=${AppPackage}  appActivity=${AppActivity}
+    wait until page contains                        Get great rewards from Z!
     wait until page contains                        Register
     click element                                   xpath=//*[contains(@text,'Register')]
     wait until page contains                        Create an account
+
 
 
 
