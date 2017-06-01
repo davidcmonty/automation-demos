@@ -78,8 +78,8 @@
           <file leaf-file-name="Android.robot" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Tests/Android.robot">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                <state relative-caret-position="108">
+                  <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -162,8 +162,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2560" />
-    <option name="y" value="-119" />
+    <option name="x" value="-2284" />
+    <option name="y" value="28" />
     <option name="width" value="2560" />
     <option name="height" value="1417" />
   </component>
@@ -461,7 +461,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2560" y="-119" width="2560" height="1417" extended-state="6" />
+    <frame x="-2284" y="28" width="2560" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10870422" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -772,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Android.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
         </state>
       </provider>

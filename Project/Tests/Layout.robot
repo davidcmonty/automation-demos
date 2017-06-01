@@ -45,3 +45,22 @@ Verify Page Layout
     check eyes window                               ${WindowName}  force_full_page_screenshot=True
     close eyes session
 
+Begin Sauce Test
+    Open Browser  ${URL}  ${BROWSER}  remote_url=${REMOTE_URL}  desired_capabilities=${DESIRED_CAPABILITIES}
+    # this line is optional if you want to see your test case name sooner in the Saucelabs.com UI
+    # Can only be run AFTER opening a browser
+    Run keyword if  '${REMOTE_URL}' != ''
+    ...  Update Saucelabs Test Name
+    ...  ${SUITE_NAME}: ${TEST_NAME}
+    ...  ${REMOTE_URL}
+   Maximize Browser Window
+
+End Sauce Test
+    # this line updates the test case name, result, and tags in the Saucelabs.com UI
+    # after the test case has completed but BEFORE closing the browser
+    Run keyword if  '${REMOTE_URL}' != ''
+    ...  Update Saucelabs Test Result
+    ...  ${SUITE_NAME}: ${TEST_NAME}
+    ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
+    close browser
+
