@@ -23,9 +23,11 @@ ${BatchName}                                        MyBatchName
 ${SauceLabsChrome}                                  name:Win10 + Chrome,platform:Windows 10,browserName:chrome,version:58.0
 ${SauceLabsIE11}                                    name:Win10 + IE11,platform:Windows 8.1,browserName:internet explorer,version:11.0
 ${SaucelabsEdge}                                    name:Win10 + MS Edge,platform:Windows 10,browserName:MicrosoftEdge,version:14.14393
-
+${SaucelabsiPhone6s}                                desired_capabilities=name:iPhone 6s,appiumVersion:1.6.4,deviceName:iPhone 6s Simulator,deviceOrientation:portrait,platformVersion:10.3,platformName:iOS,browserName:Safari
 
 *** Keywords ***
 Begin Local Test
     open browser                                    ${StartUrl}  ${Browser}
 
+End Test
+    close browser

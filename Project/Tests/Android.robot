@@ -5,7 +5,7 @@ Library                                             AppiumLibrary
 *** Variables ***
 ${RemoteURL}                                        http://localhost:4723/wd/hub
 ${PlatformName}                                     Android
-${PlatformVersion}                                  5.0
+${PlatformVersion}                                  6.0
 ${DeviceName}                                       192.168.57.101:5555
 ${AppLocation}                                      ${CURDIR}/../Builds/zapp.apk
 ${AutomationName}                                   appium
