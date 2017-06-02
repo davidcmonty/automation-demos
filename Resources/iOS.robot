@@ -7,8 +7,8 @@ ${RemoteURL}                                        http://127.0.0.1:4723/wd/hub
 ${PlatformName}                                     iOS
 ${PlatformVersion}                                  10.2
 ${DeviceName}                                       iPhone 6
-${AppLocation}                                      ${CURDIR}/../Builds/z-app-demo-ios.app
-${BundleID}                                         com.zenergy.coffeecard.debug
+${AppLocation}                                      ${CURDIR}/../Builds/MyApp.app
+${BundleID}                                         com.myapp.myappname.debug
 ${AutomationName}                                   XCUITest
 
 
@@ -22,8 +22,7 @@ Start ios app
     wait until page contains                        Get great rewards from Z!
     wait until page contains                        Register
     click element                                   accessibility_id=Register
-    input text                                      accessibility_id=First name  David
-    input text                                      accessibility_id=Last name  Montgomery
+
 
 
 
