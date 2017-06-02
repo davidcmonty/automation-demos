@@ -22,8 +22,6 @@ Start ios app
     wait until page contains                        Get great rewards from Z!
     wait until page contains                        Register
     click element                                   accessibility_id=Register
-    input text                                      accessibility_id=First name  David
-    input text                                      accessibility_id=Last name  Montgomery
-
+    input text  xpath=//*[contains(@text,'Last name')]  text=shekhara
 
 
