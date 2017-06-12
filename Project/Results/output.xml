@@ -1,70 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170529 17:46:37.733" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/ios.robot" id="s1" name="Ios">
-<test id="s1-t1" name="Start ios app">
-<kw name="Close All Applications" library="AppiumLibrary">
-<doc>Closes all open applications.</doc>
-<status status="PASS" endtime="20170529 17:46:37.808" starttime="20170529 17:46:37.808"></status>
-</kw>
-<kw name="Open Application" library="AppiumLibrary">
-<doc>Opens a new application to given Appium server.</doc>
+<robot generated="20170612 17:20:13.900" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/layout.robot" id="s1" name="Layout">
+<test id="s1-t1" name="User can see edge layout">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${RemoteURL}</arg>
-<arg>platformName=${PlatformName}</arg>
-<arg>platformVersion=${PlatformVersion}</arg>
-<arg>deviceName=${DeviceName}</arg>
-<arg>app=${AppLocation}</arg>
-<arg>automationName=${AutomationName}</arg>
-<arg>bundleId=${BundleID}</arg>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+<arg>remote_url=${RemoteURL}</arg>
+<arg>desired_capabilities=${SaucelabsEdge}</arg>
 </arguments>
-<status status="PASS" endtime="20170529 17:46:52.410" starttime="20170529 17:46:37.808"></status>
+<msg timestamp="20170612 17:20:15.465" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz' through remote server at 'http://jeremybates:bca8f2e1-acae-4742-952d-ce1afdfc95b2@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170612 17:20:35.261" starttime="20170612 17:20:15.464"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<doc>Waits until `text` appears on current page.</doc>
+<kw name="Verify Page Layout">
 <arguments>
-<arg>Get great rewards from Z!</arg>
+<arg>Win10 + MS Edge</arg>
+<arg>${AppName}: Home Page</arg>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+<arg>Batch: ${AppName}: Home Page</arg>
 </arguments>
-<status status="PASS" endtime="20170529 17:46:52.553" starttime="20170529 17:46:52.410"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<doc>Waits until `text` appears on current page.</doc>
+<kw name="Open Eyes Session" library="RobotAppEyes">
+<doc>Starts a session with the Applitools Eyes Website.</doc>
 <arguments>
-<arg>Register</arg>
+<arg>appname=${AppName}</arg>
+<arg>testname=${TestName}</arg>
+<arg>apikey=${ApplitoolsKey}</arg>
+<arg>matchlevel=${MatchLevel}</arg>
+<arg>batchName=${BatchName}</arg>
 </arguments>
-<status status="PASS" endtime="20170529 17:46:52.611" starttime="20170529 17:46:52.553"></status>
+<status status="PASS" endtime="20170612 17:20:35.263" starttime="20170612 17:20:35.262"></status>
 </kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
+<kw name="Check Eyes Window" library="RobotAppEyes">
+<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
 <arguments>
-<arg>accessibility_id=Register</arg>
+<arg>${WindowName}</arg>
+<arg>force_full_page_screenshot=True</arg>
 </arguments>
-<msg timestamp="20170529 17:46:52.612" level="INFO">Clicking element 'accessibility_id=Register'.</msg>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170529 17:46:52.962" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170529 17:46:52.962" starttime="20170529 17:46:52.804"></status>
+<status status="PASS" endtime="20170612 17:20:50.744" starttime="20170612 17:20:35.263"></status>
 </kw>
-<msg timestamp="20170529 17:46:52.963" level="FAIL">ValueError: Element locator 'accessibility_id=Register' did not match any elements.</msg>
-<status status="FAIL" endtime="20170529 17:46:52.963" starttime="20170529 17:46:52.612"></status>
+<kw name="Close Eyes Session" library="RobotAppEyes">
+<doc>Closes a session and returns the results of the session.</doc>
+<status status="PASS" endtime="20170612 17:20:52.201" starttime="20170612 17:20:50.744"></status>
 </kw>
-<doc>As a user I can...</doc>
+<status status="PASS" endtime="20170612 17:20:52.201" starttime="20170612 17:20:35.262"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170612 17:20:52.809" starttime="20170612 17:20:52.202"></status>
+</kw>
+<doc>Test that as a user I can load the home page and see the desktop layout is correct</doc>
 <tags>
-<tag>iOS</tag>
+<tag>Test</tag>
 </tags>
-<status status="FAIL" endtime="20170529 17:46:52.963" critical="yes" starttime="20170529 17:46:37.808">ValueError: Element locator 'accessibility_id=Register' did not match any elements.</status>
+<status status="PASS" endtime="20170612 17:20:52.809" critical="yes" starttime="20170612 17:20:15.464"></status>
 </test>
-<status status="FAIL" endtime="20170529 17:46:52.964" starttime="20170529 17:46:37.735"></status>
+<status status="PASS" endtime="20170612 17:20:52.810" starttime="20170612 17:20:13.902"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">iOS</stat>
+<stat fail="0" pass="1">Test</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Ios" pass="0">Ios</stat>
+<stat fail="0" id="s1" name="Layout" pass="1">Layout</stat>
 </suite>
 </statistics>
 <errors>

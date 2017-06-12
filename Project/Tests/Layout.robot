@@ -23,7 +23,7 @@ User can see ie layout
 
 User can see edge layout
     [Documentation]                                 Test that as a user I can load the home page and see the desktop layout is correct
-    [Tags]                                          Layout
+    [Tags]                                          Test
 
     open browser                                    ${StartUrl}  ${Browser}  remote_url=${RemoteURL}  desired_capabilities=${SaucelabsEdge}
     Verify Page Layout                              Win10 + MS Edge  ${AppName}: Home Page  ${StartUrl}  ${Browser}  Batch: ${AppName}: Home Page
