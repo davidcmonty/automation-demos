@@ -26,13 +26,3 @@ Start android app
     wait until page contains                        Create an account
 
 
-# 1. Start Genymotion
-# 2. Start Device
-# 3. Wait until device open
-# 4. Start Appium
-# 5. Start Appium server
-# 6. Start new session
-# 7. ...
-
-
-

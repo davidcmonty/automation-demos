@@ -1,42 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170613 17:14:26.600" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot" id="s1" name="Saucelabs">
-<test id="s1-t1" name="User can open home">
-<kw name="Begin Sauce Test">
+<robot generated="20170614 10:13:52.407" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/project.robot" id="s1" name="Project">
+<test id="s1-t1" name="User can load home page">
+<kw type="setup" name="Begin test" library="Common">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<arg>remote_url=${REMOTE_URL}</arg>
-<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
+<arg>${StartUrl}</arg>
+<arg>${Browser}</arg>
+<arg>desired_capabilities=${DesiredCapabilities}</arg>
+<arg>remote_url=${RemoteUrl}</arg>
 </arguments>
-<msg timestamp="20170613 17:14:26.794" level="INFO">Opening browser 'chrome' to base url 'http://www.z.co.nz'</msg>
-<status status="PASS" endtime="20170613 17:14:32.032" starttime="20170613 17:14:26.793"></status>
+<msg timestamp="20170614 10:13:52.610" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
+<status status="PASS" endtime="20170614 10:13:57.810" starttime="20170614 10:13:52.610"></status>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:32.032"></status>
+<status status="PASS" endtime="20170614 10:13:57.810" starttime="20170614 10:13:52.610"></status>
 </kw>
-<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:26.793"></status>
-</kw>
+<kw name="Verify locator widget" library="HomePage">
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>Find a Z near you</arg>
 </arguments>
-<status status="PASS" endtime="20170613 17:14:32.533" starttime="20170613 17:14:32.513"></status>
+<status status="PASS" endtime="20170614 10:13:57.830" starttime="20170614 10:13:57.811"></status>
 </kw>
-<kw name="End Sauce Test">
+<status status="PASS" endtime="20170614 10:13:57.830" starttime="20170614 10:13:57.810"></status>
+</kw>
+<kw name="Confirm page loaded">
+<arguments>
+<arg>/</arg>
+</arguments>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${StartURL}${Page}</arg>
+</arguments>
+<msg timestamp="20170614 10:13:57.831" level="INFO">Opening url 'http://z.co.nz/'</msg>
+<status status="PASS" endtime="20170614 10:13:59.123" starttime="20170614 10:13:57.831"></status>
+</kw>
+<kw name="Can load header" library="Header">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Motorists</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.142" starttime="20170614 10:13:59.124"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Business</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.161" starttime="20170614 10:13:59.142"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>About Z</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.178" starttime="20170614 10:13:59.161"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Why</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.194" starttime="20170614 10:13:59.178"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Contact</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.211" starttime="20170614 10:13:59.194"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Investor Centre</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.228" starttime="20170614 10:13:59.211"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Find us</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.244" starttime="20170614 10:13:59.228"></status>
+</kw>
+<status status="PASS" endtime="20170614 10:13:59.244" starttime="20170614 10:13:59.123"></status>
+</kw>
+<kw name="Can load footer" library="Footer">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Z Fuel prices</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.261" starttime="20170614 10:13:59.245"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Z Card</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.278" starttime="20170614 10:13:59.261"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Fly Buys</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.295" starttime="20170614 10:13:59.278"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Airpoints</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.312" starttime="20170614 10:13:59.296"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Call us</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.328" starttime="20170614 10:13:59.312"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Follow us on</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.345" starttime="20170614 10:13:59.328"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${SiteSheild}</arg>
+</arguments>
+<status status="PASS" endtime="20170614 10:13:59.377" starttime="20170614 10:13:59.345"></status>
+</kw>
+<status status="PASS" endtime="20170614 10:13:59.377" starttime="20170614 10:13:59.245"></status>
+</kw>
+<status status="PASS" endtime="20170614 10:13:59.377" starttime="20170614 10:13:57.830"></status>
+</kw>
+<kw type="teardown" name="End test" library="Common">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
+<status status="PASS" endtime="20170614 10:13:59.441" starttime="20170614 10:13:59.378"></status>
 </kw>
-<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
+<status status="PASS" endtime="20170614 10:13:59.441" starttime="20170614 10:13:59.377"></status>
 </kw>
-<status status="PASS" endtime="20170613 17:14:32.598" critical="yes" starttime="20170613 17:14:26.793"></status>
+<doc>As a user I can open the home page and verify it has loaded</doc>
+<tags>
+<tag>home</tag>
+</tags>
+<status status="PASS" endtime="20170614 10:13:59.441" critical="yes" starttime="20170614 10:13:52.609"></status>
 </test>
-<status status="PASS" endtime="20170613 17:14:32.599" starttime="20170613 17:14:26.602"></status>
+<status status="PASS" endtime="20170614 10:13:59.442" starttime="20170614 10:13:52.409"></status>
 </suite>
 <statistics>
 <total>
@@ -44,25 +165,12 @@
 <stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">home</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Saucelabs" pass="1">Saucelabs</stat>
+<stat fail="0" id="s1" name="Project" pass="1">Project</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20170613 17:14:26.792" level="ERROR">Error in file '/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot': Importing test library '/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Sauceclient.py' failed: ImportError: No module named Sauceclient
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  /Library/Frameworks/Python.framework/Versions/2.7/bin
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload
-  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages</msg>
 </errors>
 </robot>
