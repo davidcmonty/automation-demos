@@ -1,62 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170612 17:20:13.900" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/layout.robot" id="s1" name="Layout">
-<test id="s1-t1" name="User can see edge layout">
+<robot generated="20170613 17:14:26.600" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot" id="s1" name="Saucelabs">
+<test id="s1-t1" name="User can open home">
+<kw name="Begin Sauce Test">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${StartUrl}</arg>
-<arg>${Browser}</arg>
-<arg>remote_url=${RemoteURL}</arg>
-<arg>desired_capabilities=${SaucelabsEdge}</arg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
 </arguments>
-<msg timestamp="20170612 17:20:15.465" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz' through remote server at 'http://jeremybates:bca8f2e1-acae-4742-952d-ce1afdfc95b2@ondemand.saucelabs.com:80/wd/hub'</msg>
-<status status="PASS" endtime="20170612 17:20:35.261" starttime="20170612 17:20:15.464"></status>
+<msg timestamp="20170613 17:14:26.794" level="INFO">Opening browser 'chrome' to base url 'http://www.z.co.nz'</msg>
+<status status="PASS" endtime="20170613 17:14:32.032" starttime="20170613 17:14:26.793"></status>
 </kw>
-<kw name="Verify Page Layout">
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:32.032"></status>
+</kw>
+<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:26.793"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>Win10 + MS Edge</arg>
-<arg>${AppName}: Home Page</arg>
-<arg>${StartUrl}</arg>
-<arg>${Browser}</arg>
-<arg>Batch: ${AppName}: Home Page</arg>
+<arg>Find a Z near you</arg>
 </arguments>
-<kw name="Open Eyes Session" library="RobotAppEyes">
-<doc>Starts a session with the Applitools Eyes Website.</doc>
-<arguments>
-<arg>appname=${AppName}</arg>
-<arg>testname=${TestName}</arg>
-<arg>apikey=${ApplitoolsKey}</arg>
-<arg>matchlevel=${MatchLevel}</arg>
-<arg>batchName=${BatchName}</arg>
-</arguments>
-<status status="PASS" endtime="20170612 17:20:35.263" starttime="20170612 17:20:35.262"></status>
+<status status="PASS" endtime="20170613 17:14:32.533" starttime="20170613 17:14:32.513"></status>
 </kw>
-<kw name="Check Eyes Window" library="RobotAppEyes">
-<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
-<arguments>
-<arg>${WindowName}</arg>
-<arg>force_full_page_screenshot=True</arg>
-</arguments>
-<status status="PASS" endtime="20170612 17:20:50.744" starttime="20170612 17:20:35.263"></status>
-</kw>
-<kw name="Close Eyes Session" library="RobotAppEyes">
-<doc>Closes a session and returns the results of the session.</doc>
-<status status="PASS" endtime="20170612 17:20:52.201" starttime="20170612 17:20:50.744"></status>
-</kw>
-<status status="PASS" endtime="20170612 17:20:52.201" starttime="20170612 17:20:35.262"></status>
-</kw>
+<kw name="End Sauce Test">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170612 17:20:52.809" starttime="20170612 17:20:52.202"></status>
+<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
 </kw>
-<doc>Test that as a user I can load the home page and see the desktop layout is correct</doc>
-<tags>
-<tag>Test</tag>
-</tags>
-<status status="PASS" endtime="20170612 17:20:52.809" critical="yes" starttime="20170612 17:20:15.464"></status>
+<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
+</kw>
+<status status="PASS" endtime="20170613 17:14:32.598" critical="yes" starttime="20170613 17:14:26.793"></status>
 </test>
-<status status="PASS" endtime="20170612 17:20:52.810" starttime="20170612 17:20:13.902"></status>
+<status status="PASS" endtime="20170613 17:14:32.599" starttime="20170613 17:14:26.602"></status>
 </suite>
 <statistics>
 <total>
@@ -64,12 +44,25 @@
 <stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Test</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Layout" pass="1">Layout</stat>
+<stat fail="0" id="s1" name="Saucelabs" pass="1">Saucelabs</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20170613 17:14:26.792" level="ERROR">Error in file '/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot': Importing test library '/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Sauceclient.py' failed: ImportError: No module named Sauceclient
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Library/Frameworks/Python.framework/Versions/2.7/bin
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages</msg>
 </errors>
 </robot>
