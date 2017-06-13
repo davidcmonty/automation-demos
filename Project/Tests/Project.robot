@@ -69,7 +69,7 @@ User can see error page
     [Documentation]                                 Test that as a user I can see the error page when I browse to a page that does not exist
     [Tags]                                          error
 
-    ErrorPage.Verify Error Page
+    ErrorPage.Can see error message
 
 
 *** Keywords ***
