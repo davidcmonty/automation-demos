@@ -59,6 +59,7 @@ Confirm reset page loads
     click link                                      I've lost my password
     wait until page contains                        Lost Password
 
+
 Enter valid reset details
     input text                                      ${ResetUsername}  ${ValidUsername2}
 

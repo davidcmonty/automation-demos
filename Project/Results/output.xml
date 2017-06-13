@@ -1,72 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170529 17:46:37.733" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/ios.robot" id="s1" name="Ios">
-<test id="s1-t1" name="Start ios app">
-<kw name="Close All Applications" library="AppiumLibrary">
-<doc>Closes all open applications.</doc>
-<status status="PASS" endtime="20170529 17:46:37.808" starttime="20170529 17:46:37.808"></status>
-</kw>
-<kw name="Open Application" library="AppiumLibrary">
-<doc>Opens a new application to given Appium server.</doc>
+<robot generated="20170613 17:14:26.600" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot" id="s1" name="Saucelabs">
+<test id="s1-t1" name="User can open home">
+<kw name="Begin Sauce Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>${RemoteURL}</arg>
-<arg>platformName=${PlatformName}</arg>
-<arg>platformVersion=${PlatformVersion}</arg>
-<arg>deviceName=${DeviceName}</arg>
-<arg>app=${AppLocation}</arg>
-<arg>automationName=${AutomationName}</arg>
-<arg>bundleId=${BundleID}</arg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=${DESIRED_CAPABILITIES}</arg>
 </arguments>
-<status status="PASS" endtime="20170529 17:46:52.410" starttime="20170529 17:46:37.808"></status>
+<msg timestamp="20170613 17:14:26.794" level="INFO">Opening browser 'chrome' to base url 'http://www.z.co.nz'</msg>
+<status status="PASS" endtime="20170613 17:14:32.032" starttime="20170613 17:14:26.793"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:32.032"></status>
+</kw>
+<status status="PASS" endtime="20170613 17:14:32.513" starttime="20170613 17:14:26.793"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>Get great rewards from Z!</arg>
+<arg>Find a Z near you</arg>
 </arguments>
-<status status="PASS" endtime="20170529 17:46:52.553" starttime="20170529 17:46:52.410"></status>
+<status status="PASS" endtime="20170613 17:14:32.533" starttime="20170613 17:14:32.513"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<doc>Waits until `text` appears on current page.</doc>
-<arguments>
-<arg>Register</arg>
-</arguments>
-<status status="PASS" endtime="20170529 17:46:52.611" starttime="20170529 17:46:52.553"></status>
+<kw name="End Sauce Test">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
 </kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>accessibility_id=Register</arg>
-</arguments>
-<msg timestamp="20170529 17:46:52.612" level="INFO">Clicking element 'accessibility_id=Register'.</msg>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170529 17:46:52.962" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170529 17:46:52.962" starttime="20170529 17:46:52.804"></status>
+<status status="PASS" endtime="20170613 17:14:32.598" starttime="20170613 17:14:32.533"></status>
 </kw>
-<msg timestamp="20170529 17:46:52.963" level="FAIL">ValueError: Element locator 'accessibility_id=Register' did not match any elements.</msg>
-<status status="FAIL" endtime="20170529 17:46:52.963" starttime="20170529 17:46:52.612"></status>
-</kw>
-<doc>As a user I can...</doc>
-<tags>
-<tag>iOS</tag>
-</tags>
-<status status="FAIL" endtime="20170529 17:46:52.963" critical="yes" starttime="20170529 17:46:37.808">ValueError: Element locator 'accessibility_id=Register' did not match any elements.</status>
+<status status="PASS" endtime="20170613 17:14:32.598" critical="yes" starttime="20170613 17:14:26.793"></status>
 </test>
-<status status="FAIL" endtime="20170529 17:46:52.964" starttime="20170529 17:46:37.735"></status>
+<status status="PASS" endtime="20170613 17:14:32.599" starttime="20170613 17:14:26.602"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">iOS</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Ios" pass="0">Ios</stat>
+<stat fail="0" id="s1" name="Saucelabs" pass="1">Saucelabs</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20170613 17:14:26.792" level="ERROR">Error in file '/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/saucelabs.robot': Importing test library '/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Sauceclient.py' failed: ImportError: No module named Sauceclient
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Library/Frameworks/Python.framework/Versions/2.7/bin
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload
+  /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages</msg>
 </errors>
 </robot>
