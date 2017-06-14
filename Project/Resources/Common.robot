@@ -1,6 +1,7 @@
 *** Settings ***
 Library                                             Selenium2Library
 Library                                             RobotAppEyes/RobotAppEyes.py
+Library                                             ../saucelabs.py
 
 Resource                                            Security.robot
 
@@ -28,10 +29,22 @@ ${BaselineName}                                     MyBaseline
 ${BatchName}                                        MyBatchName
 
 *** Keywords ***
+#https://gist.github.com/datakurre/9589707
+#requires: pip install simplejson requests
+
 Begin test
     open browser                                    ${StartUrl}
                                                     ...  ${Browser}
                                                     ...  desired_capabilities=${DesiredCapabilities}
                                                     ...  remote_url=${RemoteUrl}
+
+    Run keyword if                                  '${RemoteUrl}' != ''
+                                                    ...  Update Saucelabs Test Name
+                                                    ...  ${SUITE_NAME}: ${TEST_NAME}
+                                                    ...  ${RemoteUrl}
 End test
+    Run keyword if                                  '${RemoteUrl}' != ''
+                                                    ...  Update Saucelabs Test Result
+                                                    ...  ${SUITE_NAME}: ${TEST_NAME}
+                                                    ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
     close browser
