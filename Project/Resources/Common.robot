@@ -38,12 +38,12 @@ Begin test
                                                     ...  desired_capabilities=${DesiredCapabilities}
                                                     ...  remote_url=${RemoteUrl}
 
-    Run keyword if                                  '${RemoteUrl}' != ''
+    run keyword if                                  '${RemoteUrl}' != ''
                                                     ...  Update Saucelabs Test Name
                                                     ...  ${SUITE_NAME}: ${TEST_NAME}
                                                     ...  ${RemoteUrl}
 End test
-    Run keyword if                                  '${RemoteUrl}' != ''
+    run keyword if                                  '${RemoteUrl}' != ''
                                                     ...  Update Saucelabs Test Result
                                                     ...  ${SUITE_NAME}: ${TEST_NAME}
                                                     ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
