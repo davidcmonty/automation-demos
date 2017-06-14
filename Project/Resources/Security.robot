@@ -1,5 +1,7 @@
 *** Variables ***
-${StartURL}                                         http://z.co.nz
+${StartURL}                                         https://test-z.heyday.net.nz/
+#http://z.co.nz
+#https://test-z.heyday.net.nz/
 
 ### CMS ###
 ${ValidUsername}                                    dev@heyday.co.nz
