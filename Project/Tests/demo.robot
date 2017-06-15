@@ -1,13 +1,20 @@
 *** Settings ***
 Resource                                            ../Resources/Common.robot
 Resource                                            ../Resources/PageObjects/LoginPage.robot
+Resource                                            ../Resources/PageObjects/LocatorPage.robot
 Resource                                            ../Resources/PageObjects/ErrorPage.robot
 Resource                                            ../Resources/PageObjects/Header.robot
 
 Test Setup                                          Common.Begin test
-Test Teardown                                       Common.End test
+#Test Teardown                                       Common.End test
 
 *** Test Cases ***
+User can search for station
+    [Documentation]                                 As a user I can load the home page and confirm the layout is as expected
+    [Tags]                                          locator
+
+    LocatorPage.Can search for station
+
 User can load home page
     [Documentation]                                 As a user I can load the home page and confirm the layout is as expected
     [Tags]                                          home
