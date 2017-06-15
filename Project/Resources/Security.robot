@@ -1,5 +1,5 @@
 *** Variables ***
-${StartURL}                                         https://test-z.heyday.net.nz/
+${StartURL}                                         http://z.co.nz
 #http://z.co.nz
 #https://test-z.heyday.net.nz/
 

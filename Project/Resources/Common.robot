@@ -21,12 +21,8 @@ ${EMPTY}
 
 ### Applitools ###
 ${AppName}                                          Z Website
-${TestName}                                         MyTestName
-${Width}                                            800
-${Height}                                           600
+${TestName}
 ${MatchLevel}                                       LAYOUT2
-${BaselineName}                                     MyBaseline
-${BatchName}                                        MyBatchName
 
 *** Keywords ***
 #https://gist.github.com/datakurre/9589707
@@ -48,3 +44,17 @@ End test
                                                     ...  ${SUITE_NAME}: ${TEST_NAME}
                                                     ...  ${TEST_STATUS}  ${TEST_TAGS}  ${REMOTE_URL}
     close browser
+
+
+Take screenshot
+    [Arguments]                                     ${WindowName}
+
+    open eyes session                               appname=${AppName}
+                                                    ...  testname=${TestName}
+                                                    ...  apikey=${ApplitoolsKey}
+                                                    ...  matchlevel=${MatchLevel}
+                                                    ...  batchName=${AppName}
+                                                    ...  fullPageScreenshot=True
+
+    check eyes window                               ${WindowName}
+    close eyes session

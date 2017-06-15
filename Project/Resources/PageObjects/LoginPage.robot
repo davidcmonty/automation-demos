@@ -37,7 +37,6 @@ Enter valid login details
 
 Sumbit login
      click element                                  ${LoginButton}
-     open bro
 
 Confirm logged in
     wait until page contains                        Hi

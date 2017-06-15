@@ -33,5 +33,6 @@ Can do search
     input text                                      ${SearchField}  ${SearchTerm}
     click element                                   ${SearchButton}
     wait until page contains                        Results for '${SearchTerm}'
+    sleep                                           5s
     element should be visible                       ${Pagination}
     Can load header
