@@ -1,16 +1,16 @@
 *** Settings ***
-Resource                                            ../Resources/Common.robot
+Resource                                            ../Resources/CommonDesktop.robot
 Resource                                            ../Resources/PageObjects/LoginPage.robot
 Resource                                            ../Resources/PageObjects/LocatorPage.robot
 Resource                                            ../Resources/PageObjects/ErrorPage.robot
 Resource                                            ../Resources/PageObjects/Header.robot
 
-Test Setup                                          Common.Begin test
-#Test Teardown                                       Common.End test
+Test Setup                                          Common.Begin web test
+Test Teardown                                       Common.End web test
 
 *** Test Cases ***
 User can search for station
-    [Documentation]                                 As a user I can load the home page and confirm the layout is as expected
+    [Documentation]                                 As a user I can search for a Z station and see a result returned
     [Tags]                                          locator
 
     LocatorPage.Can search for station

@@ -1,6 +1,6 @@
 *** Settings ***
 Library                                             Selenium2Library
-Resource                                            ../../Resources/Common.robot
+Resource                                            ../../Resources/CommonDesktop.robot
 Resource                                            ../../Resources/Security.robot
 
 

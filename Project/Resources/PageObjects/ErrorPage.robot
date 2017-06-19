@@ -11,11 +11,11 @@ ${ErrorMessage}                                      You found the hole in our d
 
 *** Keywords ***
 Can see error message
-    Load Error Page
-    Verify Error Page
+    Load error page
+    Verify error page
 
-Load Error Page
+Load error page
     go to                                           ${StartUrl}/xyz
 
-Verify Error Page
+Verify error page
     wait until page contains                        ${ErrorMessage}
