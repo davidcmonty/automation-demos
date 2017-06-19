@@ -10,8 +10,9 @@ Suite Teardown                                      CommonMobile.End suite setup
 Test Setup                                          CommonMobile.Begin test setup
 Test Teardown                                       CommonMobile.End test setup
 
+
 *** Test Cases ***
-User can go to login page
+User can open login page
     [Documentation]                                 As a user I should be abe to get to login page
     [Tags]                                          login
 
@@ -23,13 +24,13 @@ User can see errors
 
     LoginScreen.Empty form login
 
-User can't login without agreeing to terms
+User can not login without agreeing to terms
     [Documentation]                                 As a user I should not be abe to login without accepting terms
     [Tags]                                          login
 
     LoginScreen.Login without agreeing to terms
 
-User can't login with invalid details
+User can not login with invalid details
     [Documentation]                                 As a user I should not be abe to login with invalid credentials
     [Tags]                                          login
 
