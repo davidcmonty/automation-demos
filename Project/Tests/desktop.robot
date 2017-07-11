@@ -5,8 +5,8 @@ Resource                                            ../Resources/PageObjects/Loc
 Resource                                            ../Resources/PageObjects/ErrorPage.robot
 Resource                                            ../Resources/PageObjects/Header.robot
 
-Test Setup                                          Common.Begin web test
-Test Teardown                                       Common.End web test
+Test Setup                                          CommonDesktop.Begin web test
+Test Teardown                                       CommonDesktop.End web test
 
 *** Test Cases ***
 User can search for station

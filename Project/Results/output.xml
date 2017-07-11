@@ -1,127 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170615 17:31:58.279" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
-<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/demo.robot" id="s1" name="Demo">
-<test id="s1-t1" name="User can search for station">
-<kw type="setup" name="Begin test" library="Common">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>${StartUrl}</arg>
-<arg>${Browser}</arg>
-<arg>desired_capabilities=${DesiredCapabilities}</arg>
-<arg>remote_url=${RemoteUrl}</arg>
-</arguments>
-<msg timestamp="20170615 17:31:58.465" level="INFO">Opening browser 'chrome' to base url 'http://z.co.nz'</msg>
-<status status="PASS" endtime="20170615 17:32:04.370" starttime="20170615 17:31:58.465"></status>
+<robot generated="20170620 14:14:43.316" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/dmontgomery/Sites/Robot Framework/Automation Demos/Project/tests/mobile.robot" id="s1" name="Mobile">
+<kw type="setup" name="Begin suite setup" library="CommonMobile">
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" endtime="20170620 14:14:46.077" starttime="20170620 14:14:46.077"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>'${RemoteUrl}' != ''</arg>
-<arg>Update Saucelabs Test Name</arg>
-<arg>${SUITE_NAME}: ${TEST_NAME}</arg>
-<arg>${RemoteUrl}</arg>
+<arg>'${Type}'=='ios'</arg>
+<arg>open application</arg>
+<arg>${RemoteURL}</arg>
+<arg>platformName=${iOSPlatformName}</arg>
+<arg>platformVersion=${iOSPlatformVersion}</arg>
+<arg>deviceName=${iOSDeviceName}</arg>
+<arg>app=${iOSAppLocation}</arg>
+<arg>automationName=${iOSAutomationName}</arg>
+<arg>bundleId=${iOSBundleID}</arg>
 </arguments>
-<status status="PASS" endtime="20170615 17:32:04.371" starttime="20170615 17:32:04.371"></status>
-</kw>
-<status status="PASS" endtime="20170615 17:32:04.371" starttime="20170615 17:31:58.464"></status>
-</kw>
-<kw name="Can search for station" library="LocatorPage">
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by `locator`.</doc>
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.</doc>
 <arguments>
-<arg>${CSSLocatorSearch}</arg>
+<arg>${RemoteURL}</arg>
+<arg>platformName=${iOSPlatformName}</arg>
+<arg>platformVersion=${iOSPlatformVersion}</arg>
+<arg>deviceName=${iOSDeviceName}</arg>
+<arg>app=${iOSAppLocation}</arg>
+<arg>automationName=${iOSAutomationName}</arg>
+<arg>bundleId=${iOSBundleID}</arg>
 </arguments>
-<msg timestamp="20170615 17:32:04.372" level="INFO">Clicking element 'css=a.button--primary'.</msg>
-<status status="PASS" endtime="20170615 17:32:08.561" starttime="20170615 17:32:04.372"></status>
+<status status="PASS" endtime="20170620 14:15:46.830" starttime="20170620 14:14:46.078"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="Selenium2Library">
+<status status="PASS" endtime="20170620 14:15:46.831" starttime="20170620 14:14:46.077"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${Type}'=='android'</arg>
+<arg>open application</arg>
+<arg>${RemoteURL}</arg>
+<arg>platformName=${AndroidPlatformName}</arg>
+<arg>platformVersion=${AndroidPlatformVersion}</arg>
+<arg>deviceName=${AndroidDeviceName}</arg>
+<arg>app=${AndroidAppLocation}</arg>
+<arg>automationName=${AndroidAutomationName}</arg>
+</arguments>
+<status status="PASS" endtime="20170620 14:15:46.831" starttime="20170620 14:15:46.831"></status>
+</kw>
+<status status="PASS" endtime="20170620 14:15:46.831" starttime="20170620 14:14:46.076"></status>
+</kw>
+<test id="s1-t1" name="User can open login page">
+<kw type="setup" name="Begin test setup" library="CommonMobile">
+<kw name="Portrait" library="AppiumLibrary">
+<doc>Set the device orientation to PORTRAIT</doc>
+<status status="PASS" endtime="20170620 14:15:46.919" starttime="20170620 14:15:46.832"></status>
+</kw>
+<status status="PASS" endtime="20170620 14:15:46.920" starttime="20170620 14:15:46.832"></status>
+</kw>
+<kw name="Open login page" library="LoginScreen">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>Looking for a specific service or product?</arg>
+<arg>Get great rewards from Z</arg>
 </arguments>
-<status status="PASS" endtime="20170615 17:32:08.578" starttime="20170615 17:32:08.561"></status>
+<status status="PASS" endtime="20170620 14:15:46.980" starttime="20170620 14:15:46.920"></status>
 </kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>css=#locatorsearch</arg>
-<arg>Auck</arg>
-</arguments>
-<msg timestamp="20170615 17:32:08.578" level="INFO">Typing text 'Auck' into text field 'css=#locatorsearch'</msg>
-<status status="PASS" endtime="20170615 17:32:08.674" starttime="20170615 17:32:08.578"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20170615 17:32:10.676" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20170615 17:32:10.676" starttime="20170615 17:32:08.674"></status>
-</kw>
-<kw name="Take screenshot" library="Common">
-<arguments>
-<arg>Find a Z Service Station Page</arg>
-</arguments>
-<kw name="Open Eyes Session" library="RobotAppEyes">
-<doc>Starts a session with the Applitools Eyes Website.</doc>
-<arguments>
-<arg>appname=${AppName}</arg>
-<arg>testname=${TestName}</arg>
-<arg>apikey=${ApplitoolsKey}</arg>
-<arg>matchlevel=${MatchLevel}</arg>
-<arg>batchName=${AppName}</arg>
-<arg>fullPageScreenshot=True</arg>
-</arguments>
-<status status="PASS" endtime="20170615 17:32:10.679" starttime="20170615 17:32:10.678"></status>
-</kw>
-<kw name="Check Eyes Window" library="RobotAppEyes">
-<doc>Takes a snapshot from the browser using the web driver and matches it with</doc>
-<arguments>
-<arg>${WindowName}</arg>
-</arguments>
-<status status="PASS" endtime="20170615 17:32:23.533" starttime="20170615 17:32:10.680"></status>
-</kw>
-<kw name="Close Eyes Session" library="RobotAppEyes">
-<doc>Closes a session and returns the results of the session.</doc>
-<status status="PASS" endtime="20170615 17:32:25.115" starttime="20170615 17:32:23.533"></status>
-</kw>
-<status status="PASS" endtime="20170615 17:32:25.115" starttime="20170615 17:32:10.677"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
+<kw name="Click Element" library="AppiumLibrary">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
-<arg>${CSSFirstResult}</arg>
+<arg>accessibility_id=${LoginButtonID}</arg>
 </arguments>
-<msg timestamp="20170615 17:32:25.116" level="INFO">Clicking element 'css=ul.autocomplete__results li:first-child'.</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
+<msg timestamp="20170620 14:15:46.981" level="INFO">Clicking element 'accessibility_id=Already registered?'.</msg>
+<status status="PASS" endtime="20170620 14:15:47.810" starttime="20170620 14:15:46.980"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${LogInID}</arg>
+</arguments>
+<status status="PASS" endtime="20170620 14:15:48.522" starttime="20170620 14:15:47.811"></status>
+</kw>
+<status status="PASS" endtime="20170620 14:15:48.522" starttime="20170620 14:15:46.920"></status>
+</kw>
+<kw type="teardown" name="End test setup" library="CommonMobile">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170615 17:32:25.394" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170615 17:32:25.394" starttime="20170615 17:32:25.134"></status>
+<msg timestamp="20170620 14:15:48.893" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170620 14:15:48.894" starttime="20170620 14:15:48.523"></status>
 </kw>
-<msg timestamp="20170615 17:32:25.394" level="FAIL">ValueError: Element locator 'css=ul.autocomplete__results li:first-child' did not match any elements.</msg>
-<status status="FAIL" endtime="20170615 17:32:25.394" starttime="20170615 17:32:25.116"></status>
+<status status="PASS" endtime="20170620 14:15:48.894" starttime="20170620 14:15:48.522"></status>
 </kw>
-<status status="FAIL" endtime="20170615 17:32:25.395" starttime="20170615 17:32:04.372"></status>
-</kw>
-<doc>As a user I can load the home page and confirm the layout is as expected</doc>
+<doc>As a user I should be abe to get to login page</doc>
 <tags>
-<tag>locator</tag>
+<tag>test</tag>
 </tags>
-<status status="FAIL" endtime="20170615 17:32:25.395" critical="yes" starttime="20170615 17:31:58.463">ValueError: Element locator 'css=ul.autocomplete__results li:first-child' did not match any elements.</status>
+<status status="PASS" endtime="20170620 14:15:48.894" critical="yes" starttime="20170620 14:15:46.831"></status>
 </test>
-<status status="FAIL" endtime="20170615 17:32:25.396" starttime="20170615 17:31:58.281"></status>
+<status status="PASS" endtime="20170620 14:15:48.894" starttime="20170620 14:14:43.318"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">locator</stat>
+<stat fail="0" pass="1">test</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Demo" pass="0">Demo</stat>
+<stat fail="0" id="s1" name="Mobile" pass="1">Mobile</stat>
 </suite>
 </statistics>
 <errors>

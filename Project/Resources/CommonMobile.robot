@@ -8,7 +8,8 @@ Resource                                            Security.robot
 
 ### Saucelabs ###
 ${DesiredCapabilities}
-${RemoteUrl}
+${RemoteUrl}                                        http://127.0.0.1:4723/wd/hub
+${Type}
 
 ### Users ###
 ${ValidUsername}                                    dev@heyday.co.nz
@@ -23,46 +24,39 @@ ${AppName}                                          <Your app name here>
 ${TestName}
 ${MatchLevel}                                       LAYOUT2
 
-### iOS Connection ###
+### iOS Desired Capabilities ###
 ${iOSPlatformName}                                  iOS
-${iOSPlatformVersion}                               9.3
 ${iOSDeviceName}                                    iPhone 6
-${iOSAppLocation}                                   ../../Builds/zapp.app
-${BundleID}                                         com.zenergy.coffeecard.debug
+${iOSBundleID}                                      com.zenergy.coffeecard.debug
+${iOSPlatformVersion}                               9.3
+${iOSAppLocation}                                   ${CURDIR}/../Builds/zapp-ios.app
 ${iOSAutomationName}                                XCUITest
 
-
-### Android Connection ###
+### Android Desired Capabilities ###
 ${AndroidPlatformName}                              Android
-${AndroidPlatformVersion}                           7.0
 ${AndroidDeviceName}                                192.168.57.101:5555
-${AndroidAppLocation}                               ../../Builds/zapp.apk
-${AppPackage}                                       nz.co.zenergy.loyaltycard.android.debug
-${AndroidAutomationName}
+${AndroidPlatformVersion}                           6.0
+${AndroidAppPackage}                                nz.co.zenergy.loyaltycard.android.debug
+${AndroidAppLocation}                               ${CURDIR}/../Builds/zapp-android.apk
+${AndroidAutomationName}                            appium
 
 
 *** Keywords ***
-#https://gist.github.com/datakurre/9589707
-#requires: pip install simplejson requests
-
-
-Begin web test
-
-
 
 Begin suite setup
   close all applications
-  Run Keyword If                                    '${type}'=='ios'
-                                                    ...  Open Application  ${RemoteURL}
+  Run Keyword If                                    '${Type}'=='ios'
+                                                    ...  open application
+                                                    ...  ${RemoteURL}
                                                     ...  platformName=${iOSPlatformName}
                                                     ...  platformVersion=${iOSPlatformVersion}
                                                     ...  deviceName=${iOSDeviceName}
                                                     ...  app=${iOSAppLocation}
                                                     ...  automationName=${iOSAutomationName}
-                                                    ...  bundleId=${BundleID}
+                                                    ...  bundleId=${iOSBundleID}
 
-  Run Keyword If                                    '${type}'=='android'
-                                                    ...  Open Application
+  Run Keyword If                                    '${Type}'=='android'
+                                                    ...  open application
                                                     ...  ${RemoteURL}
                                                     ...  platformName=${AndroidPlatformName}
                                                     ...  platformVersion=${AndroidPlatformVersion}
@@ -80,6 +74,11 @@ End test setup
   capture page screenshot
 
 ### Applitools ###
+
+# This is the third party layout comparison tool that takes a baseline screenshot on the first test run and then compares subsequent screenshots against this.
+# ${WindowName} is the argument you give the 'Take screenshot' keyword i.e. 'Take screenshot  Home page' which you put into any test to take a screenshot.
+
+
 Take screenshot
     [Arguments]                                     ${WindowName}
 

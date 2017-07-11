@@ -1,6 +1,6 @@
 *** Settings ***
 Library                                             AppiumLibrary
-
+Resource                                            ../CommonMobile.robot
 
 *** Variables ***
 
